@@ -1,0 +1,73 @@
+﻿
+
+
+@model eZeljeznice.Web.Areas.ModulAdministracija.Models.KategorijaKvaraPrikaziVM
+
+@using eZeljeznice.Web.Areas.ModulAdministracija.Models
+
+
+
+<div class="panel">
+
+
+    <div id="content-wrapper">
+
+
+
+        <div class="table-light">
+            <div class="table-header">
+                <div class="table-caption">
+                 Kategorije kvarova
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Naziv</th>
+                        <th>Opis</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (KategorijaKvaraPrikaziVM.KategorijaKvaraInfo x in Model.KategorijeKvara)
+                    {
+
+                        <tr>
+                            <td>@x.Naziv</td>
+                            <td>@x.Opis</td>
+                            <td>
+                                <a class="btn btn-danger btn-sm" style="color:black" href="/ModulAdministracija/KategorijaKvara/Obrisi?kategorijaKvaraId=@x.Id">Obriši</a>
+                                @Ajax.ActionLink("Uredi", "Uredi", new { kategorijaKvaraId = x.Id }, new AjaxOptions { UpdateTargetId = "ajax-kategorija-kvara" }, new { @class = "btn btn-primary btn-sm" })
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @Ajax.ActionLink("Dodaj novi", "Dodaj", null, new AjaxOptions { UpdateTargetId = "ajax-kategorija-kvara" }, new { @class = "btn btn-primary btn-sm" })
+
+
+        </div>
+
+        <div class="panel panel-success col-md-5">
+
+            <div id="ajax-kategorija-kvara">
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="si111.app.fit.ba" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^H:\\Windows\\Web\\SI-Zeljeznice\\eZeljeznice\.Web\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^H:\\Windows\\Web\\SI-Zeljeznice\\eZeljeznice\.Web\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="MojConnectionString-Web.config Connection String" description="" value="Data Source=app.fit.ba,1433;Initial Catalog=eZeljeznice;Integrated Security=false;User ID=eZeljeznice;Password=eupX15@8;MultipleActiveResultSets=true" tags="">
+    <parameterEntry kind="XmlFile" scope="H:\\Windows\\Web\\SI-Zeljeznice\\eZeljeznice\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MojConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,76 @@
+﻿
+
+
+@model eZeljeznice.Web.Areas.ModulAdministracija.Models.GradPrikaziVM
+
+@using eZeljeznice.Web.Areas.ModulAdministracija.Models
+
+
+@{ Layout = null;}
+
+
+
+    <div>
+
+
+
+        <div class="table-light">
+            <div class="table-header">
+                <div class="table-caption">
+                     @Model.Kanton - Gradovi
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Naziv</th>
+                        <th>Oznaka</th>
+                   
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (GradPrikaziVM.GradInfo x in Model.Gradovi)
+                    {
+
+                        <tr>
+                            <td>@x.Naziv</td>
+                            <td>@x.PostanskiBroj</td>
+                           
+                            <td>
+                                @Ajax.ActionLink("Obrisi", "Obrisi", new { gradId = x.Id }, new AjaxOptions { UpdateTargetId = "ajax-kanton" }, new { @class = "btn btn-danger btn-sm" })
+
+
+                                @Ajax.ActionLink("Uredi", "Uredi", new { gradId = x.Id }, new AjaxOptions { UpdateTargetId = "ajax-grad" }, new { @class = "btn btn-primary btn-sm" })
+                              
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @Ajax.ActionLink("Dodaj novi", "Dodaj", new {kantonId=Model.KantonId }, new AjaxOptions { UpdateTargetId = "ajax-grad" }, new { @class = "btn btn-primary btn-sm" })
+
+
+        </div>
+
+        <div>
+
+            <div id="ajax-grad">
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+

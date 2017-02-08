@@ -1,0 +1,83 @@
+﻿@using eZeljeznice.Web.Areas.ModulAdministracija.Models
+
+@model eZeljeznice.Web.Areas.ModulAdministracija.Models.ZaposlenikPrikaziVM
+
+<script>
+    init.push(function () {
+        $('#jq-datatables-example').dataTable();
+        $('#jq-datatables-example_wrapper .table-caption').text('Zaposlenici');
+        $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Pretraga...');
+    });
+</script>
+<!-- / Javascript -->
+
+
+ <div class="panel">
+    
+    <div id="content-wrapper">
+        <form class="form-group">
+            <div class="form-group col-md-3">
+                @Html.DropDownListFor(model => model.gradId, Model.gradoviStavke, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group col-md-3">
+                <input type="submit" value="Pretraga" class="form-control btn-primary" />
+            </div>
+        </form>
+
+
+        <div class="table-light form-group">
+            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jq-datatables-example">
+                <thead>
+                    <tr>
+                        <th>Slika</th>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>JMBG</th>
+                        <th>Email</th>
+                        <th>Telefon</th>
+                        <th>Grad</th>
+                        <th>Adresa</th>
+                        <th>Tip zaposljenja</th>
+                        <th>Korisničko ime</th>
+                        <th>Aktivan</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (ZaposlenikPrikaziVM.ZaposlenikInfo x in Model.zaposlenici)
+            {
+                        <tr>
+                            @*<td><img src="data:image;base64,@System.Convert.ToBase64String(x.Slika)" /></td>*@
+                            <td>@x.Ime</td>
+                            <td>@x.Prezime</td>
+                            <td>@x.JMBG</td>
+                            <td>@x.Email</td>
+                            <td>@x.Telefon</td>
+                            <td>@x.Grad</td>
+                            <td>@x.Adresa</td>
+                            <td>@x.TipZaposljenja</td>
+                            <td>@x.KorisnickoIme</td>
+                            <td><input type="checkbox" value="@x.Aktivan" disabled="disabled" checked="@x.Aktivan" /></td>
+                            <td>
+
+                              <a style="color:black" class="btn btn-danger btn-sm" href="/ModulAdministracija/Zaposlenik/Obrisi?zaposlenikId=@x.Id">Obrisi</a>
+                             <a  style="color:black"  class="btn btn-primary btn-sm" href="/ModulAdministracija/Zaposlenik/Uredi?zaposlenikId=@x.Id">Uredi</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+</div>

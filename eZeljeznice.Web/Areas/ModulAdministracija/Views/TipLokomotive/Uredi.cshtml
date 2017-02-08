@@ -1,0 +1,72 @@
+﻿@model eZeljeznice.Web.Areas.ModulAdministracija.Models.TipLokomotiveUrediVM
+  
+@{
+    Layout = null;
+}
+
+
+   
+
+
+    <div>
+
+        @Html.ActionLink("Nazad", "Index")
+    </div>
+
+    @if (Model.Id <= 0)
+    {
+        <h4>Dodaj tip lokomotove</h4>
+    }
+    else
+    {
+        <h4> Uredi tip lokomotive</h4>
+    }
+
+
+    @using (Html.BeginForm("Snimi", "TipLokomotive", FormMethod.Post, new { @name = "form", @onsubmit = "return validateNaziv()" }))
+    {
+
+
+        <div class="form-horizontal">
+
+
+
+            @Html.HiddenFor(model => model.Id)
+
+
+            <div class="form-group">
+
+                <div class="col-md-8">
+                     
+                    <label for="Naziv">Naziv:</label>
+                   <span id="validation" class="text-danger" style="display:none">Obavezno polje</span>
+                    @Html.TextBoxFor(model => model.Naziv, new { @class = "form-control", name="Naziv", @id="Naziv" })
+
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-8">
+
+                    <label for="Opis">Opis:</label>
+                    @Html.TextAreaFor(model => model.Opis, new { @class = "form-control", @rows = "4" })
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-10">
+
+                    <input type="submit" value="Sačuvaj" class="btn btn-success btn-sm" />
+
+                </div>
+            </div>
+
+        </div>
+
+
+    }
+
+
+

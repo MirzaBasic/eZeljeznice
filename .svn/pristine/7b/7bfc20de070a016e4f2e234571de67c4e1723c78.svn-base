@@ -1,0 +1,73 @@
+﻿
+
+
+@model eZeljeznice.Web.Areas.ModulAdministracija.Models.TipLokomotivePrikaziVM
+
+@using eZeljeznice.Web.Areas.ModulAdministracija.Models
+
+
+
+<div class="panel">
+
+
+    <div id="content-wrapper">
+
+
+
+        <div class="table-light">
+            <div class="table-header">
+                <div class="table-caption">
+                   Tipovi lokomotiva
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Naziv</th>
+                        <th>Opis</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (TipLokomotivePrikaziVM.TipLokomotiveInfo x in Model.TipoviLokomotiva)
+                    {
+
+                        <tr>
+                            <td>@x.Naziv</td>
+                            <td>@x.Opis</td>
+                            <td>
+                                <a class="btn btn-danger btn-sm" style="color:black" href="/ModulAdministracija/TipLokomotive/Obrisi?tipLokomotiveId=@x.Id">Obriši</a>
+                                @Ajax.ActionLink("Uredi", "Uredi", new { tipLokomotiveId = x.Id }, new AjaxOptions { UpdateTargetId = "ajax-tip-lokomotive" }, new { @class = "btn btn-primary btn-sm" })
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @Ajax.ActionLink("Dodaj novi", "Dodaj", null, new AjaxOptions { UpdateTargetId = "ajax-tip-lokomotive" }, new { @class = "btn btn-primary btn-sm" })
+
+
+        </div>
+
+        <div class="panel panel-success col-md-5">
+
+            <div id="ajax-tip-lokomotive">
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+

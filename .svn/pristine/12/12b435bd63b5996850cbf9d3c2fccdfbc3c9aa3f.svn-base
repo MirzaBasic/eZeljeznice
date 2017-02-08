@@ -1,0 +1,75 @@
+﻿
+
+
+@model eZeljeznice.Web.Areas.ModulAdministracija.Models.DrzavaPrikaziVM
+
+@using eZeljeznice.Web.Areas.ModulAdministracija.Models
+
+
+
+<div class="panel">
+
+
+    <div id="content-wrapper">
+
+
+
+        <div class="table-light">
+            <div class="table-header">
+                <div class="table-caption">
+                    Države
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Naziv</th>
+                        <th>Oznaka</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (DrzavaPrikaziVM.DrzavaInfo x in Model.Drzave)
+                    {
+
+                        <tr>
+                            <td>@x.Naziv</td>
+                            <td>@x.Oznaka</td>
+                            <td>
+                                <a class="btn btn-danger btn-sm" style="color:black" href="/ModulAdministracija/Drzava/Obrisi?drzavaId=@x.Id">Obriši</a>
+                                @Ajax.ActionLink("Uredi", "Uredi","Drzava", new { drzavaId = x.Id }, new AjaxOptions { UpdateTargetId = "ajax-drzava" }, new { @class = "btn btn-primary btn-sm" })
+                                @Ajax.ActionLink("Kantoni", "Index","Kanton", new { drzavaId = x.Id }, new AjaxOptions { UpdateTargetId = "ajax-drzava" }, new { @class = "btn btn-info btn-sm" })
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @Ajax.ActionLink("Dodaj novu", "Dodaj", null, new AjaxOptions { UpdateTargetId = "ajax-drzava" }, new { @class = "btn btn-primary btn-sm" })
+
+
+        </div>
+
+      
+
+        <div id="ajax-drzava">
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+

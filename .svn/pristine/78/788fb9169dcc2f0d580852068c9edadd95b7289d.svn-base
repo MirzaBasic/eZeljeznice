@@ -1,0 +1,103 @@
+﻿
+@using eZeljeznice.Web.Areas.ModulAdministracija.Models
+@model eZeljeznice.Web.Areas.ModulAdministracija.Models.LokomotivaUrediVM
+
+
+
+
+<div class="panel">
+
+
+  
+        <div class="padding-sm">
+
+            @if (Model.Id <= 0)
+            {
+
+                <h1 class="modal-title container">Nova lokomotiva</h1>
+            }
+            else
+            {
+
+                <h1 class="modal-title container">Uredi lokomotivu</h1>
+            }
+
+           
+
+        </div>
+
+
+   
+    <div id="content-wrapper">
+
+
+
+
+        <form action="/ModulAdministracija/Lokomotiva/Snimi">
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="naziv">Naziv:</label>
+                    @Html.ValidationMessageFor(model => model.Naziv, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(model => model.Naziv, new { @class = "form-control" })
+
+
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="serijskiBroj">Serijski broj:</label>
+                    @Html.ValidationMessageFor(model => model.SerijskiBroj, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(model => model.SerijskiBroj, new { @class = "form-control" })
+
+
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="tipVagona">Tip lokomotive:</label>
+
+                    @Html.DropDownListFor(model => model.TipLokomotiveId, Model.tipoviLokomotivaStavke, new { @class = "form-control" })
+
+                </div>
+
+            </div>
+            <div class="form-group col-md-6">
+
+                <div class="col-md-4 no-padding">
+                    <label for="datumProizvodnje">Datum proizvodnje:</label>
+                    @Html.ValidationMessageFor(model => model.DatumProizvodnje, null, new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.DatumProizvodnje, new { htmlAttributes = new { @class = "form-control", @Value = Model.DatumProizvodnje.ToString("yyyy-MM-dd"), @min = DateTime.Now.AddYears(-200).ToString("yyyy-MM-dd"), @max = DateTime.Now.ToString("yyyy-MM-dd") } })
+                </div>
+
+            </div>
+
+
+            <div class="form-group col-md-6">
+                @Html.CheckBoxFor(model => model.Aktivan)
+                <label for="Aktivan">Aktivan:</label>
+
+
+            </div>
+
+
+            <div class="form-group col-md-3">
+                <input type="submit" value="Sačuvaj" class="form-control btn-primary" />
+
+            </div>
+
+        </form>
+
+
+
+
+    </div>
+
+
+
+
+    </div>
+

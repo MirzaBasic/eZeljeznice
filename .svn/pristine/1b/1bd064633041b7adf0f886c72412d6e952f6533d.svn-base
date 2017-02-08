@@ -1,0 +1,93 @@
+﻿using eZeljeznice.Data.Model;
+using eZeljeznice.Web.Areas.ModulAdministracija.Models;
+using eZeljeznice.Web.Helper;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace eZeljeznice.Web.Areas.ModulAdministracija.Controllers
+{
+    [Autorizacija(true)]
+    public class TipLokomotiveController : Controller
+    {
+        // GET: ModulAdministracija/TipLokomotive
+        MojContext mc = new MojContext();
+
+        public ActionResult Index()
+        {
+            TipLokomotivePrikaziVM model = new TipLokomotivePrikaziVM();
+            model.TipoviLokomotiva = mc.TipoviLokomotiva.Select(x => new TipLokomotivePrikaziVM.TipLokomotiveInfo
+            {
+                Id = x.Id,
+                Naziv = x.Naziv,
+                Opis = x.Opis
+            }).ToList();
+
+            return View("Prikazi", model);
+        }
+
+        public ActionResult Uredi(int tipLokomotiveId)
+        {
+            TipLokomotive tl = mc.TipoviLokomotiva.Find(tipLokomotiveId);
+            TipLokomotiveUrediVM model = new TipLokomotiveUrediVM();
+            model.Id = tl.Id;
+            model.Naziv = tl.Naziv;
+            model.Opis = tl.Opis;
+
+
+            return View("Uredi", model);
+        }
+        public ActionResult Obrisi(int tipLokomotiveId)
+        {
+            TipLokomotive tl = mc.TipoviLokomotiva.Find(tipLokomotiveId);
+
+            mc.TipoviLokomotiva.Remove(tl);
+
+            try { mc.SaveChanges(); } catch { }
+
+            return RedirectToAction("Index");
+        }
+        public ActionResult Dodaj()
+        {
+            TipLokomotiveUrediVM model = new TipLokomotiveUrediVM();
+
+
+            return View("Uredi", model);
+        }
+        public ActionResult Snimi(TipLokomotiveUrediVM tl)
+        {
+
+            if (!ModelState.IsValid)
+            {
+
+                return View("Uredi", tl);
+
+
+            }
+
+            TipLokomotive tipDB;
+            if (tl.Id== 0)
+            {
+                tipDB = new TipLokomotive();
+                mc.TipoviLokomotiva.Add(tipDB);
+
+            }
+            else
+            {
+                tipDB = mc.TipoviLokomotiva.Where(x => x.Id == tl.Id).FirstOrDefault();
+
+            }
+
+            tipDB.Naziv = tl.Naziv;
+            tipDB.Opis = tl.Opis;
+
+            mc.SaveChanges();
+
+
+
+            return RedirectToAction("Index");
+        }
+    }
+}

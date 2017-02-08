@@ -1,0 +1,18 @@
+﻿function validateNaziv() {
+   
+
+
+    var naziv = document.forms["form"]["Naziv"].value;
+    if (naziv == "") {
+        document.getElementById("validation").style.display = "block"
+        return false;
+    }
+    else {
+        document.getElementById("validation").style.display = "none"
+        return true;
+    }
+   
+}
+
+
+

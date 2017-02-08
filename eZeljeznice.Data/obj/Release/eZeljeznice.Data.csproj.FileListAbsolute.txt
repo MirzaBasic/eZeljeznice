@@ -1,0 +1,10 @@
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\bin\Release\eZeljeznice.Data.dll.config
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\bin\Release\eZeljeznice.Data.dll
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\bin\Release\eZeljeznice.Data.pdb
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\bin\Release\EntityFramework.dll
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\bin\Release\EntityFramework.SqlServer.dll
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\bin\Release\EntityFramework.xml
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\bin\Release\EntityFramework.SqlServer.xml
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\obj\Release\eZeljeznice.Data.csprojResolveAssemblyReference.cache
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\obj\Release\eZeljeznice.Data.dll
+H:\Windows\Web\SI-Zeljeznice\eZeljeznice.Data\obj\Release\eZeljeznice.Data.pdb

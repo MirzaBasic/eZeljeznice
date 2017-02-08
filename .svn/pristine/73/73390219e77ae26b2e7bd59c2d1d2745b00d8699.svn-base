@@ -1,0 +1,171 @@
+﻿@using eZeljeznice.Data.Model;
+@model eZeljeznice.Web.Areas.ModulAdministracija.Models.KorisnikUrediVM
+  
+
+<div class="panel">
+  
+    <div class="padding-sm">
+    @if (Model.Id <= 0)
+    {
+        <h1 class="modal-title container">Novi korisnik</h1>
+    }
+    else
+    {
+        <h1 class="modal-title container">Uredi korisnika</h1>
+        @Html.ActionLink(" Nazad", "Index", null, new { @class = "fa fa-arrow-left" })
+    }
+
+   </div>
+
+  
+    <div id="content-wrapper">
+        @using (Html.BeginForm("Snimi", "Korisnik"))
+        {
+
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="ime">Ime:</label>
+                    @Html.ValidationMessageFor(model => model.Ime, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(model => model.Ime, new { @class = "form-control" })
+
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="prezime">Prezime:</label>
+                    @Html.ValidationMessageFor(model => model.Prezime, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(model => model.Prezime, new { @class = "form-control" })
+
+                </div>
+
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="JMBG">JMBG:</label>
+
+                    @Html.TextBoxFor(model => model.JMBG, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="nazivFirme">Naziv firme:</label>
+                    @Html.TextBoxFor(model => model.NazivFirme, new { @class = "form-control" })
+                </div>
+            </div>
+
+            
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="brojKreditneKartice">Broj kreditne kartice:</label>
+                    @Html.TextBoxFor(model => model.BrojKreditenKartice, new { @class = "form-control", @type = "number" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <div class="col-md-4 no-padding">
+                    <label for="telefon">Telefon:</label>
+                    @Html.TextBoxFor(model => model.Telefon, new { @class = "form-control" ,@type = "number" })
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="fax">Fax:</label>
+                    @Html.TextBoxFor(model => model.Fax, new { @class = "form-control" , @type = "number" })
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="form-group col-md-6">
+                <div class="col-md-8 no-padding">
+                    <label for="email">Email:</label>
+                    @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="korisnickoIme">Korisničko ime:</label>
+                    @Html.ValidationMessageFor(model => model.KorisnickoIme, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(model => model.KorisnickoIme, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="lozinka">Lozinka:</label>
+                    @Html.ValidationMessageFor(model => model.Lozinka, null, new { @class = "text-danger"})
+                    @Html.TextBoxFor(model => model.Lozinka, new { @class = "form-control", @type = "password" })
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-4 no-padding">
+                    <label for="datumRodjenja">Datum rođenja:</label>
+                    @Html.ValidationMessageFor(model => model.DatumRodjenja, null, new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.DatumRodjenja, new { htmlAttributes = new { @class = "form-control", @Value = Model.DatumRodjenja.ToString("yyyy-MM-dd"), @min = DateTime.Now.AddYears(-100).ToString("yyyy-MM-dd"), @max = DateTime.Now.ToString("yyyy-MM-dd") } })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <div class="col-md-8 no-padding">
+                    <label for="adresa">Adresa:</label>
+                    @Html.TextBoxFor(model => model.Adresa, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-6 no-padding">
+                    <label for="gradId">Grad:</label>
+
+
+                    @Html.DropDownListFor(model => model.GradId, Model.gradoviStavke, new { @class = "form-control" })
+
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                @Html.CheckBoxFor(model => model.Aktivan)
+                <label for="aktivan">Aktivan</label>
+
+            </div>
+            <div class="form-group col-md-3">
+                <input type="submit" value="Snimi" class="btn-primary form-control" />
+            </div>
+
+
+
+
+
+
+
+        }
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

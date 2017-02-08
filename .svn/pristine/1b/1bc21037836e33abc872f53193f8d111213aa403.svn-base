@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    
+   <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+
+
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top" >
+        <div class="container-fluid" data-container="collapse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/ModulAdministracija/Home/Index">Željeznice Federacije BiH</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/ModulAdministracija/Home/Index">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Zaposlenici
+                      
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ModulAdministracija/Zaposlenik/Dodaj">Novi zaposlenik</a></li>
+                        <li><a href="/ModulAdministracija/Zaposlenik/Prikazi">Pregled zaposlenika</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Korisnici
+
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ModulAdministracija/Korisnik/Dodaj">Novi korisnik</a></li>
+                        <li><a href="/ModulAdministracija/Korisnik/Prikazi">Pregled korisnika</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Odjava</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content" id="main">
+       <div style="margin-top:2%">
+           @RenderBody()
+      </div>
+        <hr />
+      
+    </div>
+
+    <div class="panel-footer">
+        &copy; @DateTime.Now.Year - FIT 
+    </div>
+
+
+  
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+
+    <script src="~/Scripts/navigation.js"></script>
+
+
+   
+</body>
+</html>

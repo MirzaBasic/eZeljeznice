@@ -1,0 +1,76 @@
+﻿@model eZeljeznice.Web.Areas.ModulAdministracija.Models.KantonUrediVM
+
+@{
+    Layout = null;
+}
+
+
+<div class="panel col-md-6">
+
+
+    <div>
+
+        @Ajax.ActionLink("Nazad", "Index",new {drzavaId=Model.DrzavaId }, new AjaxOptions { UpdateTargetId = "ajax-drzava" })
+    </div>
+
+    @if (Model.Id <= 0)
+    {
+        <h4>Dodaj kanton</h4>
+    }
+    else
+    {
+        <h4> Uredi kanton</h4>
+    }
+
+
+    @using (Ajax.BeginForm("Snimi", "Kanton", new AjaxOptions { UpdateTargetId = "ajax-drzava", OnBegin= "return validateNaziv()" }, new { @name = "form" }))
+    {
+
+
+        <div class="form-horizontal">
+
+
+
+            @Html.HiddenFor(model => model.Id)
+
+            @Html.HiddenFor(model => model.DrzavaId)
+
+            <div class="form-group">
+
+                <div class="col-md-8">
+
+                    <label for="Naziv">Naziv:</label>
+                    <span id="validation" class="text-danger" style="display:none">Obavezno polje</span>
+                    @Html.TextBoxFor(model => model.Naziv, new { @class = "form-control", name = "Naziv", @id = "Naziv" })
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+
+                <div class="col-md-2">
+
+                    <label for="Oznaka">Oznaka:</label>
+                    @Html.TextBoxFor(model => model.Oznaka, new { @class = "form-control" })
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-10">
+
+                    <input type="submit" value="Sačuvaj" class="btn btn-success btn-sm" />
+
+                </div>
+            </div>
+
+        </div>
+
+
+    }
+    </div>
+
+

@@ -1,0 +1,73 @@
+﻿
+
+
+@model eZeljeznice.Web.Areas.ModulAdministracija.Models.KantonPrikaziVM
+
+@using eZeljeznice.Web.Areas.ModulAdministracija.Models
+
+
+@{ Layout = null;}
+<div>
+
+
+    <div>
+
+
+
+        <div class="table-light">
+            <div class="table-header">
+                <div class="table-caption">
+                 @Model.Drzava - Kantoni 
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Naziv</th>
+                        <th>Oznaka</th>
+                   
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (KantonPrikaziVM.KantonInfo x in Model.Kantoni)
+                    {
+
+                        <tr>
+                            <td>@x.Naziv</td>
+                            <td>@x.Oznaka</td>
+                          
+                            <td>
+                                <a class="btn btn-danger btn-sm" style="color:black" href="/ModulAdministracija/Kanton/Obrisi?kantonId=@x.Id">Obriši</a>
+                                @Ajax.ActionLink("Uredi", "Uredi","Kanton",new { kantonId = x.Id }, new AjaxOptions { UpdateTargetId = "ajax-kanton" }, new { @class = "btn btn-primary btn-sm" })
+                                @Ajax.ActionLink("Gradovi", "Index", "Grad", new { kantonId = x.Id }, new AjaxOptions { UpdateTargetId = "ajax-kanton" }, new { @class = "btn btn-info btn-sm" })
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @Ajax.ActionLink("Dodaj novu", "Dodaj", new {drzavaId=Model.DrzavaId }, new AjaxOptions { UpdateTargetId = "ajax-kanton" }, new { @class = "btn btn-primary btn-sm" })
+
+        </div>
+
+
+        <div id="ajax-kanton">
+
+
+        </div>
+
+    </div>
+
+    
+</div>
+
+
+
+
+
+

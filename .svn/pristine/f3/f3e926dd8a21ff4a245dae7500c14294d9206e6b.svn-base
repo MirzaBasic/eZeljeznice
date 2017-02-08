@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C43A75D0-46C9-4847-AEAE-B2CDAA6AE31A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eZeljeznice.Web</RootNamespace>
+    <AssemblyName>eZeljeznice.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Template\html\assets\demo\avatars\1.jpg" />
+    <Content Include="Content\Template\html\assets\demo\avatars\2.jpg" />
+    <Content Include="Content\Template\html\assets\demo\avatars\3.jpg" />
+    <Content Include="Content\Template\html\assets\demo\avatars\4.jpg" />
+    <Content Include="Content\Template\html\assets\demo\avatars\5.jpg" />
+    <Content Include="Content\Template\html\assets\demo\demo.js" />
+    <Content Include="Content\Template\html\assets\demo\less-1.7.0.js" />
+    <Content Include="Content\Template\html\assets\demo\logo-big.png" />
+    <Content Include="Content\Template\html\assets\demo\pricing-bg.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-1.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-2.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-3.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-4.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-5.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-6.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-7.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-8.jpg" />
+    <Content Include="Content\Template\html\assets\demo\signin-bg-9.jpg" />
+    <Content Include="Content\Template\html\assets\demo\themes\adminflare.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\asphalt.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\clean.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\default.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\dust.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\fresh.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\frost.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\purple-hills.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\silver.png" />
+    <Content Include="Content\Template\html\assets\demo\themes\white.png" />
+    <Content Include="Content\Template\html\assets\fonts\font-awesome\fontawesome-webfont.svg" />
+    <Content Include="Content\Template\html\assets\images\pixel-admin\avatar.png" />
+    <Content Include="Content\Template\html\assets\images\pixel-admin\blank.png" />
+    <Content Include="Content\Template\html\assets\images\pixel-admin\blur.svg" />
+    <Content Include="Content\Template\html\assets\images\pixel-admin\main-menu-bg.png" />
+    <Content Include="Content\Template\html\assets\images\pixel-admin\main-navbar-bg.png" />
+    <Content Include="Content\Template\html\assets\images\pixel-admin\main-navbar-logo.png" />
+    <Content Include="Content\Template\html\assets\images\plugins\bootstrap-editable\loading.gif" />
+    <Content Include="Content\Template\html\assets\images\plugins\jquery.minicolors.png" />
+    <Content Include="Content\Template\html\assets\images\themes\adminflare\body-bg.png" />
+    <Content Include="Content\Template\html\assets\images\themes\adminflare\ie-navbar-bg.png" />
+    <Content Include="Content\Template\html\assets\images\themes\adminflare\menu-bg.png" />
+    <Content Include="Content\Template\html\assets\images\themes\clean\body-bg.gif" />
+    <Content Include="Content\Template\html\assets\javascripts\bootstrap-editable-demo.js" />
+    <Content Include="Content\Template\html\assets\javascripts\bootstrap-editable-demo.min.js" />
+    <Content Include="Content\Template\html\assets\javascripts\bootstrap.js" />
+    <Content Include="Content\Template\html\assets\javascripts\bootstrap.min.js" />
+    <Content Include="Content\Template\html\assets\javascripts\demo-mock.js" />
+    <Content Include="Content\Template\html\assets\javascripts\demo-mock.min.js" />
+    <Content Include="Content\Template\html\assets\javascripts\ie.js" />
+    <Content Include="Content\Template\html\assets\javascripts\ie.min.js" />
+    <Content Include="Content\Template\html\assets\javascripts\jquery-ui-extras.js" />
+    <Content Include="Content\Template\html\assets\javascripts\jquery-ui-extras.min.js" />
+    <Content Include="Content\Template\html\assets\javascripts\jquery.mockjax.js" />
+    <Content Include="Content\Template\html\assets\javascripts\jquery.mockjax.min.js" />
+    <Content Include="Content\Template\html\assets\javascripts\pixel-admin.js" />
+    <Content Include="Content\Template\html\assets\javascripts\pixel-admin.min.js" />
+    <Content Include="Content\Template\html\assets\stylesheets\bootstrap.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\bootstrap.min.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\pages.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\pages.min.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\pixel-admin.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\pixel-admin.min.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\rtl.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\rtl.min.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\themes.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\themes.min.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\widgets.css" />
+    <Content Include="Content\Template\html\assets\stylesheets\widgets.min.css" />
+    <Content Include="Content\Template\html\charts.html" />
+    <Content Include="Content\Template\html\color-builder.html" />
+    <Content Include="Content\Template\html\complete-ui.html" />
+    <Content Include="Content\Template\html\forms-advanced.html" />
+    <Content Include="Content\Template\html\forms-editors.html" />
+    <Content Include="Content\Template\html\forms-general.html" />
+    <Content Include="Content\Template\html\forms-layouts.html" />
+    <Content Include="Content\Template\html\forms-pickers.html" />
+    <Content Include="Content\Template\html\forms-validation.html" />
+    <Content Include="Content\Template\html\index.html" />
+    <Content Include="Content\Template\html\layouts-grid.html" />
+    <Content Include="Content\Template\html\layouts-main-menu.html" />
+    <Content Include="Content\Template\html\pages-404.html" />
+    <Content Include="Content\Template\html\pages-500.html" />
+    <Content Include="Content\Template\html\pages-blank.html" />
+    <Content Include="Content\Template\html\pages-faq.html" />
+    <Content Include="Content\Template\html\pages-inbox.html" />
+    <Content Include="Content\Template\html\pages-invoice-print.html" />
+    <Content Include="Content\Template\html\pages-invoice.html" />
+    <Content Include="Content\Template\html\pages-new-email.html" />
+    <Content Include="Content\Template\html\pages-pricing.html" />
+    <Content Include="Content\Template\html\pages-profile.html" />
+    <Content Include="Content\Template\html\pages-search.html" />
+    <Content Include="Content\Template\html\pages-show-email.html" />
+    <Content Include="Content\Template\html\pages-signin-alt.html" />
+    <Content Include="Content\Template\html\pages-signin.html" />
+    <Content Include="Content\Template\html\pages-signup-alt.html" />
+    <Content Include="Content\Template\html\pages-signup.html" />
+    <Content Include="Content\Template\html\pages-timeline.html" />
+    <Content Include="Content\Template\html\stat-panels.html" />
+    <Content Include="Content\Template\html\tables.html" />
+    <Content Include="Content\Template\html\ui-alerts.html" />
+    <Content Include="Content\Template\html\ui-buttons.html" />
+    <Content Include="Content\Template\html\ui-components.html" />
+    <Content Include="Content\Template\html\ui-icons.html" />
+    <Content Include="Content\Template\html\ui-jqueryui.html" />
+    <Content Include="Content\Template\html\ui-modals.html" />
+    <Content Include="Content\Template\html\ui-panels.html" />
+    <Content Include="Content\Template\html\ui-tabs.html" />
+    <Content Include="Content\Template\html\ui-typography.html" />
+    <Content Include="Content\Template\html\ui-utility-classes.html" />
+    <Content Include="Content\Template\html\widgets.html" />
+    <Content Include="Content\train-pictures-5.jpg" />
+    <Content Include="Content\user.jpg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\ModulAdministracija\Views\web.config" />
+    <Content Include="Areas\ModulAdministracija\Views\Zaposlenik\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Zaposlenik\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Korisnik\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Korisnik\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Shared\_AdminPixelLayout.cshtml" />
+    <Content Include="Content\Template\html\assets\demo\less\bootstrap-mixins.less" />
+    <Content Include="Content\Template\html\assets\demo\less\bootstrap-variables.less" />
+    <Content Include="Content\Template\html\assets\demo\less\colors.less" />
+    <Content Include="Content\Template\html\assets\demo\less\mixins.less" />
+    <Content Include="Content\Template\html\assets\demo\less\variables.less" />
+    <Content Include="Content\Template\html\assets\fonts\font-awesome\fontawesome-webfont.eot" />
+    <Content Include="Content\Template\html\assets\fonts\font-awesome\fontawesome-webfont.ttf" />
+    <Content Include="Content\Template\html\assets\fonts\font-awesome\fontawesome-webfont.woff" />
+    <Content Include="Content\Template\html\assets\fonts\font-awesome\FontAwesome.otf" />
+    <Content Include="Areas\ModulAdministracija\Views\Shared\_TopBar.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Lokomotiva\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Lokomotiva\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Vagon\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Vagon\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\UlogaKorisnika\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\UlogaKorisnika\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Uloga\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\Uloga\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipZaposlenika\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipZaposlenika\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\KategorijaKvara\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\KategorijaKvara\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipKarte\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipKarte\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipLinije\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipLinije\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipLokomotive\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipLokomotive\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipVagona\Prikazi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipVagona\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipStanice\Uredi.cshtml" />
+    <Content Include="Areas\ModulAdministracija\Views\TipStanice\Prikazi.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\navigation.js" />
+    <Content Include="Scripts\Validation.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\KategorijaKvaraController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\KorisnikController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\LokomotivaController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\TipKarteController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\TipLinijeController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\TipLokomotiveController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\TipStaniceController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\TipVagonaController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\TipZaposlenikaController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\UlogaController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\UlogaKorisnikaController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\VagonController.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipStanicePrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipStaniceUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipVagonaPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipLokomotivePrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipLinijePrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipVagonaUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipLokomotiveUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipLinijeUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipKartePrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipKarteUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\KorisnikPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\KorisnikUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\LokomotivaPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\LokomotivaUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\KategorijaKvaraPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipZaposlenikaPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\KategorijaKvaraUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\TipZaposlenikaUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\UlogaKorisnikaPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\UlogaKorisnikaUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\UlogaPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\UlogaUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\VagonPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\VagonUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\ZaposlenikPrikaziVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\Models\ZaposlenikUrediVM.cs" />
+    <Compile Include="Areas\ModulAdministracija\ModulAdministracijaAreaRegistration.cs" />
+    <Compile Include="Areas\ModulAdministracija\Controllers\ZaposlenikController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Data\MojContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Autentifikacija.cs" />
+    <Compile Include="Helper\Autorizacija.cs" />
+    <Compile Include="Migrations\201701271631378_v1.cs" />
+    <Compile Include="Migrations\201701271631378_v1.Designer.cs">
+      <DependentUpon>201701271631378_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701272324350_v3.cs" />
+    <Compile Include="Migrations\201701272324350_v3.Designer.cs">
+      <DependentUpon>201701272324350_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\si111.app.fit.ba - Web Deploy.pubxml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eZeljeznice.Data\eZeljeznice.Data.csproj">
+      <Project>{2ec770e5-481f-4f15-b6df-6281eb744e21}</Project>
+      <Name>eZeljeznice.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701271631378_v1.resx">
+      <DependentUpon>201701271631378_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701272324350_v3.resx">
+      <DependentUpon>201701272324350_v3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>23622</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:23623/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

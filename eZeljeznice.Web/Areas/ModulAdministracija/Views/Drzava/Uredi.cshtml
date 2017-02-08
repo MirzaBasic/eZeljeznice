@@ -1,0 +1,73 @@
+﻿@model eZeljeznice.Web.Areas.ModulAdministracija.Models.DrzavaUrediVM
+
+@{
+    Layout = null;
+}
+
+
+
+
+<div class="panel col-md-6">
+    <div>
+
+        @Html.ActionLink("Nazad", "Index")
+    </div>
+
+    @if (Model.Id <= 0)
+    {
+        <h4>Dodaj državu</h4>
+    }
+    else
+    {
+        <h4> Uredi državu</h4>
+    }
+
+
+    @using (Html.BeginForm("Snimi", "Drzava", FormMethod.Post, new { @name = "form", @onsubmit = "return validateNaziv()" }))
+    {
+
+
+        <div class="form-horizontal">
+
+
+
+            @Html.HiddenFor(model => model.Id)
+
+
+            <div class="form-group">
+
+                <div class="col-md-8">
+
+                    <label for="Naziv">Naziv:</label>
+                    <span id="validation" class="text-danger" style="display:none">Obavezno polje</span>
+                    @Html.TextBoxFor(model => model.Naziv, new { @class = "form-control", name = "Naziv", @id = "Naziv" })
+
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-2">
+
+                    <label for="Oznaka">Oznaka:</label>
+                    @Html.TextBoxFor(model => model.Oznaka, new { @class = "form-control" })
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-10">
+
+                    <input type="submit" value="Sačuvaj" class="btn btn-success btn-sm" />
+
+                </div>
+            </div>
+
+        </div>
+
+
+    }
+
+
+
+       </div>
